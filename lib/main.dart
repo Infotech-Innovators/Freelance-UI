@@ -6,7 +6,6 @@ import 'package:freelance_ui/pages/gifts_page.dart';
 import 'package:freelance_ui/pages/home_page.dart';
 import 'package:freelance_ui/pages/leaderboards_page.dart';
 import 'package:freelance_ui/pages/play_with_friends_page.dart';
-import 'package:freelance_ui/utils.dart';
 
 void main() {
   runApp(const MyApp());
