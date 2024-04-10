@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelance_ui/widgets/advance_pool_widget.dart';
 import 'package:freelance_ui/widgets/button_container_widget.dart';
 import 'package:freelance_ui/widgets/pool_widget.dart';
+import 'package:freelance_ui/widgets/sortby_card_widget.dart';
 
 class CommoditiesPage extends StatefulWidget {
   const CommoditiesPage({super.key});
@@ -34,7 +36,37 @@ class _CommoditiesPageState extends State<CommoditiesPage> {
             ),
           ),
           SizedBox(
-            height: 10.h,
+            height: 15.h,
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 15.w,
+                ),
+                FilterCardWidget(
+                    text: "Sort By :",
+                    isActive: false,
+                    height: 40.h,
+                    width: 100.w),
+                FilterCardWidget(
+                    text: "Entry", isActive: true, height: 40.h, width: 100.w),
+                FilterCardWidget(
+                    text: "Price Pool",
+                    isActive: false,
+                    height: 40.h,
+                    width: 130.w),
+                FilterCardWidget(
+                    text: "Winners",
+                    isActive: false,
+                    height: 40.h,
+                    width: 110.w)
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 15.h,
           ),
           Row(
             children: [

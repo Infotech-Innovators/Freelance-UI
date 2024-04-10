@@ -13,65 +13,164 @@ class CoursesPage extends StatefulWidget {
 class _CoursesPageState extends State<CoursesPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              ButtonContainerWidget(
-                text: "COURSES",
-                isActive: true,
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ButtonContainerWidget(
+                  text: "COURSES",
+                  isActive: true,
+                ),
+                ButtonContainerWidget(
+                  text: "MY LIBRARY",
+                  isActive: false,
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+            child: Container(
+              color: Colors.white,
+              height: 47.h,
+              child: Center(
+                child: TextField(
+                  decoration: InputDecoration(
+                      hintText: 'Search',
+                      prefixIcon: const Icon(
+                        Icons.search,
+                        color: Colors.grey,
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15.r))),
+                ),
               ),
-              ButtonContainerWidget(
-                text: "MY LIBRARY",
-                isActive: false,
-              )
+            ),
+          ),
+          //TODO: CRAUSEL SLIDER
+          SizedBox(
+            height: 10.h,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: 15.w,
+              ),
+              Text(
+                "FUNDAMENTALS",
+                style: TextStyle(
+                    color: const Color.fromARGB(255, 170, 167, 167),
+                    fontSize: 17.sp),
+              ),
             ],
           ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
-          child: Container(
-            color: Colors.white,
-            height: 47.h,
-            child: Center(
-              child: TextField(
-                decoration: InputDecoration(
-                    hintText: 'Search',
-                    prefixIcon: const Icon(
-                      Icons.search,
-                      color: Colors.grey,
-                    ),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15.r))),
-              ),
-            ),
+          SizedBox(
+            height: 10.h,
           ),
-        ),
-        //TODO: CRAUSEL SLIDER
-        SizedBox(
-          height: 10.h,
-        ),
-        Row(
-          children: [
+          Container(
+            height: 1.5.h,
+            width: double.maxFinite,
+            color: Colors.grey,
+          ),
+
+          for (int i = 0; i < 2; i++) ...[
             SizedBox(
-              width: 15.w,
+              height: 10.h,
             ),
-            Text(
-              "FUNDAMENTALS",
-              style: TextStyle(
-                  color: const Color.fromARGB(255, 170, 167, 167),
-                  fontSize: 17.sp),
+            const VideoWidget(),
+            SizedBox(
+              height: 10.h,
+            ),
+            Container(
+              height: 1.5.h,
+              width: double.maxFinite,
+              color: Colors.grey,
             ),
           ],
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-        const VideoWidget(),
-      ],
+          SizedBox(
+            height: 10.h,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: 15.w,
+              ),
+              Text(
+                "TECHNICALS",
+                style: TextStyle(
+                    color: const Color.fromARGB(255, 170, 167, 167),
+                    fontSize: 17.sp),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          Container(
+            height: 1.5.h,
+            width: double.maxFinite,
+            color: Colors.grey,
+          ),
+
+          for (int i = 0; i < 2; i++) ...[
+            SizedBox(
+              height: 10.h,
+            ),
+            const VideoWidget(),
+            SizedBox(
+              height: 10.h,
+            ),
+            Container(
+              height: 1.5.h,
+              width: double.maxFinite,
+              color: Colors.grey,
+            ),
+          ],
+          SizedBox(
+            height: 10.h,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: 15.w,
+              ),
+              Text(
+                "PSYCOLOGY",
+                style: TextStyle(
+                    color: const Color.fromARGB(255, 170, 167, 167),
+                    fontSize: 17.sp),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          Container(
+            height: 1.5.h,
+            width: double.maxFinite,
+            color: Colors.grey,
+          ),
+
+          for (int i = 0; i < 2; i++) ...[
+            SizedBox(
+              height: 10.h,
+            ),
+            const VideoWidget(),
+            SizedBox(
+              height: 10.h,
+            ),
+            Container(
+              height: 1.5.h,
+              width: double.maxFinite,
+              color: Colors.grey,
+            ),
+          ]
+        ],
+      ),
     );
   }
 }

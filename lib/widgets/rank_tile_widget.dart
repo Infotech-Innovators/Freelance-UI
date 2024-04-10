@@ -9,7 +9,7 @@ class RankTileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 85.h,
-      margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
+      margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       width: double.maxFinite,
       decoration: BoxDecoration(
@@ -81,7 +81,7 @@ class RankTileWidget extends StatelessWidget {
                 "50K  ",
                 style: TextStyle(
                     color: AppColor.primaryColor,
-                    fontSize: 22.sp,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w600),
               ),
               Container(

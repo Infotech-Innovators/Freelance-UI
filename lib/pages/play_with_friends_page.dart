@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelance_ui/widgets/player_card_widget.dart';
+import 'package:freelance_ui/widgets/sortby_card_widget.dart';
 
 class PlayWithFriendsPage extends StatefulWidget {
   const PlayWithFriendsPage({super.key});
@@ -17,7 +18,72 @@ class _PlayWithFriendsPageState extends State<PlayWithFriendsPage> {
         SizedBox(
           height: 20.h,
         ),
-        const PlayerCardWidget()
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              SizedBox(
+                width: 5.w,
+              ),
+              FilterCardWidget(
+                  icon: Icons.search,
+                  text: "SEARCH",
+                  isActive: true,
+                  height: 40.h,
+                  width: 130.w),
+              FilterCardWidget(
+                  icon: Icons.pin,
+                  text: "SELECT",
+                  isActive: false,
+                  height: 40.h,
+                  width: 130.w),
+              FilterCardWidget(
+                  icon: Icons.play_arrow,
+                  text: "CHALLENGE",
+                  isActive: false,
+                  height: 40.h,
+                  width: 130.w),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+          child: Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: Center(
+                  child: Text(
+                    'NAME',
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Center(
+                  child: Text(
+                    'STATUS',
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        for (int i = 0; i < 5; i++) ...[const PlayerCardWidget()]
       ],
     );
   }
