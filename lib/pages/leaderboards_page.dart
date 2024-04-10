@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:freelance_ui/widgets/rank_tile_widget.dart';
 
 class LeaderBoardsPage extends StatefulWidget {
   const LeaderBoardsPage({super.key});
@@ -10,6 +12,13 @@ class LeaderBoardsPage extends StatefulWidget {
 class _LeaderBoardsPageState extends State<LeaderBoardsPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        SizedBox(
+          height: 30.h,
+        ),
+        const RankTileWidget()
+      ],
+    );
   }
 }

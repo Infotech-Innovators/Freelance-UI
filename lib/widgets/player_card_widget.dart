@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelance_ui/utils.dart';
 
-class RankTileWidget extends StatelessWidget {
-  const RankTileWidget({super.key});
+class PlayerCardWidget extends StatelessWidget {
+  const PlayerCardWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 85.h,
+      height: 80.h,
       margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       width: double.maxFinite,
@@ -22,14 +22,6 @@ class RankTileWidget extends StatelessWidget {
             children: [
               Container(
                 height: 60.h,
-                width: 40.w,
-                color: Colors.grey,
-              ),
-              SizedBox(
-                width: 10.w,
-              ),
-              Container(
-                height: 60.h,
                 width: 50.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.r),
@@ -40,11 +32,8 @@ class RankTileWidget extends StatelessWidget {
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 5.h,
-              ),
               Row(
                 children: [
                   Text(
@@ -77,17 +66,18 @@ class RankTileWidget extends StatelessWidget {
           ),
           Row(
             children: [
-              Text(
-                "50K  ",
-                style: TextStyle(
-                    color: AppColor.primaryColor,
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.w600),
-              ),
               Container(
-                height: 30.h,
-                width: 25.w,
-                color: Colors.grey,
+                height: 35.h,
+                padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 2.h),
+                decoration: BoxDecoration(
+                    color: AppColor.primaryColor,
+                    borderRadius: BorderRadius.circular(10.r)),
+                child: Center(
+                  child: Text(
+                    "ONLINE",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               ),
             ],
           )

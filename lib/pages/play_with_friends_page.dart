@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:freelance_ui/widgets/player_card_widget.dart';
 
 class PlayWithFriendsPage extends StatefulWidget {
   const PlayWithFriendsPage({super.key});
@@ -10,6 +12,13 @@ class PlayWithFriendsPage extends StatefulWidget {
 class _PlayWithFriendsPageState extends State<PlayWithFriendsPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        SizedBox(
+          height: 20.h,
+        ),
+        const PlayerCardWidget()
+      ],
+    );
   }
 }

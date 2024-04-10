@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelance_ui/utils.dart';
 
-class PoolWidget extends StatelessWidget {
-  const PoolWidget({super.key});
+class AdvancePoolWidget extends StatelessWidget {
+  const AdvancePoolWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +16,15 @@ class PoolWidget extends StatelessWidget {
         color: Colors.transparent,
         child: Container(
           decoration: BoxDecoration(
-              color: AppColor.whiteColor,
+              color: AppColor.primaryColor,
               borderRadius: BorderRadius.all(Radius.circular(20.r))),
-          height: 160.h,
+          height: 171.h,
           width: double.maxFinite,
           child: Column(
             children: [
               Container(
                 decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 189, 225, 255),
+                    color: AppColor.primaryColor,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20.r),
                         topRight: Radius.circular(20.r))),
@@ -39,14 +37,14 @@ class PoolWidget extends StatelessWidget {
                         Text(
                           "MAX PRIZE POOL",
                           style: TextStyle(
-                              color: AppColor.primaryColor,
+                              color: AppColor.whiteColor,
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w500),
                         ),
                         Text(
                           "ENTRY",
                           style: TextStyle(
-                              color: AppColor.primaryColor,
+                              color: AppColor.whiteColor,
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w500),
                         )
@@ -58,12 +56,20 @@ class PoolWidget extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          "₹ 1,500",
-                          style: TextStyle(
+                        Container(
+                          decoration: BoxDecoration(
                               color: const Color.fromARGB(255, 22, 93, 0),
-                              fontSize: 25.sp,
-                              fontWeight: FontWeight.w700),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10.r))),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 20.w, vertical: 5.h),
+                          child: Text(
+                            "₹ 1,500",
+                            style: TextStyle(
+                                color: const Color.fromARGB(255, 255, 242, 248),
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w500),
+                          ),
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -96,14 +102,27 @@ class PoolWidget extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text(
-                          '2 Spots Left',
-                          style: TextStyle(color: Colors.red, fontSize: 14.sp),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: AppColor.redColor,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10.r))),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 20.w, vertical: 5.h),
+                          child: Text(
+                            '2 Spots Left',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 14.sp),
+                          ),
                         )
                       ],
                     )
                   ],
                 ),
+              ),
+              Container(
+                height: 1.h,
+                color: Colors.white,
               ),
               Container(
                 height: 40.h,
