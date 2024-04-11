@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelance_ui/widgets/player_card_widget.dart';
 import 'package:freelance_ui/widgets/sortby_card_widget.dart';

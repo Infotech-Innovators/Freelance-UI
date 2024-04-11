@@ -72,7 +72,7 @@ class PlayerCardWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: AppColor.primaryColor,
                     borderRadius: BorderRadius.circular(10.r)),
-                child: Center(
+                child: const Center(
                   child: Text(
                     "ONLINE",
                     style: TextStyle(color: Colors.white),

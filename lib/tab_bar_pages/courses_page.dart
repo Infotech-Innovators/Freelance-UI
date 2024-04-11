@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:freelance_ui/widgets/button_container_widget.dart';
 import 'package:freelance_ui/widgets/video_playing_widget.dart';
@@ -15,7 +13,7 @@ class CoursesPage extends StatefulWidget {
 }
 
 class _CoursesPageState extends State<CoursesPage> {
-  bool _isCoursesActive = false;
+  bool _isCoursesActive = true;
   int _currentIndex = 0;
 
   List<String> images = [

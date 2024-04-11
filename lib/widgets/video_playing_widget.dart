@@ -1,6 +1,6 @@
-import 'package:appinio_video_player/appinio_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:video_player/video_player.dart';
 
 class VideoPlayingWidget extends StatefulWidget {
   const VideoPlayingWidget({super.key});
@@ -10,42 +10,23 @@ class VideoPlayingWidget extends StatefulWidget {
 }
 
 class _VideoPlayingWidgetState extends State<VideoPlayingWidget> {
-  late CachedVideoPlayerController _videoPlayerController,
-      _videoPlayerController2,
-      _videoPlayerController3;
+  late VideoPlayerController _videoPlayerController;
   bool isLoading = true;
-
-  late CustomVideoPlayerController _customVideoPlayerController;
-
-  final CustomVideoPlayerSettings _customVideoPlayerSettings =
-      const CustomVideoPlayerSettings(showSeekButtons: true);
 
   @override
   void initState() {
     super.initState();
 
-    _videoPlayerController = CachedVideoPlayerController.network(
-      longVideo,
+    _videoPlayerController = VideoPlayerController.networkUrl(
+      Uri.parse(longVideo),
     )..initialize().then((value) => setState(() {
           isLoading = false;
         }));
-    _videoPlayerController2 = CachedVideoPlayerController.network(video240);
-    _videoPlayerController3 = CachedVideoPlayerController.network(video480);
-    _customVideoPlayerController = CustomVideoPlayerController(
-      context: context,
-      videoPlayerController: _videoPlayerController,
-      customVideoPlayerSettings: _customVideoPlayerSettings,
-      additionalVideoSources: {
-        "240p": _videoPlayerController2,
-        "480p": _videoPlayerController3,
-        "720p": _videoPlayerController,
-      },
-    );
   }
 
   @override
   void dispose() {
-    _customVideoPlayerController.dispose();
+    _videoPlayerController.dispose();
     super.dispose();
   }
 
@@ -63,8 +44,7 @@ class _VideoPlayingWidgetState extends State<VideoPlayingWidget> {
             )
           : ClipRRect(
               borderRadius: BorderRadius.circular(15.r),
-              child: CustomVideoPlayer(
-                  customVideoPlayerController: _customVideoPlayerController),
+              child: VideoPlayer(_videoPlayerController),
             ),
     );
   }
