@@ -24,6 +24,7 @@ class FilterCardWidget extends StatelessWidget {
       height: height,
       width: width,
       margin: EdgeInsets.symmetric(horizontal: 5.w),
+      padding: EdgeInsets.symmetric(horizontal: 5.w),
       decoration: BoxDecoration(
           color: isActive ? AppColor.primaryColor : Colors.transparent,
           borderRadius: BorderRadius.all(
@@ -55,14 +56,17 @@ class FilterCardWidget extends StatelessWidget {
                   SizedBox(
                     width: 8.w,
                   ),
-                  Text(
-                    text,
-                    style: TextStyle(
-                        fontSize: 15.sp,
-                        color: isActive
-                            ? Colors.white
-                            : const Color.fromARGB(255, 167, 167, 167),
-                        fontWeight: FontWeight.w500),
+                  Expanded(
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      text,
+                      style: TextStyle(
+                          fontSize: 15.sp,
+                          color: isActive
+                              ? Colors.white
+                              : const Color.fromARGB(255, 167, 167, 167),
+                          fontWeight: FontWeight.w500),
+                    ),
                   )
                 ],
               ),

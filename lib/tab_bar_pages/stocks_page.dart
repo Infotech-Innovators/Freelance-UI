@@ -11,52 +11,77 @@ class StocksPage extends StatefulWidget {
 }
 
 class _StocksPageState extends State<StocksPage> {
+  bool isActivePortfolio = true;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Padding(
           padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ButtonContainerWidget(
-                text: "PORTFOLIO",
-                isActive: true,
+              GestureDetector(
+                onTap: () {
+                  if (isActivePortfolio == false) {
+                    setState(() {
+                      isActivePortfolio = !isActivePortfolio;
+                    });
+                  }
+                },
+                child: ButtonContainerWidget(
+                  text: "PORTFOLIO",
+                  isActive: isActivePortfolio,
+                ),
               ),
-              ButtonContainerWidget(
-                text: "PAPERTRADING",
-                isActive: false,
-              )
+              GestureDetector(
+                  onTap: () {
+                    if (isActivePortfolio == true) {
+                      setState(() {
+                        isActivePortfolio = !isActivePortfolio;
+                      });
+                    }
+                  },
+                  child: ButtonContainerWidget(
+                    text: "PAPERTRADING",
+                    isActive: !isActivePortfolio,
+                  ))
             ],
           ),
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
-          child: Container(
-            color: Colors.white,
-            height: 47.h,
-            child: Center(
-              child: TextField(
-                decoration: InputDecoration(
-                    hintText: 'Search',
-                    prefixIcon: const Icon(
-                      Icons.search,
-                      color: Colors.grey,
-                    ),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15.r))),
+        if (isActivePortfolio) ...[
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+            child: Container(
+              color: Colors.white,
+              height: 47.h,
+              child: Center(
+                child: TextField(
+                  decoration: InputDecoration(
+                      hintText: 'Search',
+                      prefixIcon: const Icon(
+                        Icons.search,
+                        color: Colors.grey,
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15.r))),
+                ),
               ),
             ),
           ),
-        ),
-        for (int i = 0; i < 5; i++) ...[
-          const StocksTile(
-              stockName: "IND STOCKS", timeString: '9:30 Am To 3:30 Pm'),
-          Container(
-            height: 1.h,
-            width: double.maxFinite,
-            color: Colors.grey,
+          for (int i = 0; i < 5; i++) ...[
+            const StocksTile(
+                stockName: "IND STOCKS", timeString: '9:30 Am To 3:30 Pm'),
+            Container(
+              height: 1.h,
+              width: double.maxFinite,
+              color: Colors.grey,
+            )
+          ]
+        ] else ...[
+          const Text(
+            'PAPERTRADING CONTENT',
+            style: TextStyle(color: Colors.red),
           )
         ]
       ],

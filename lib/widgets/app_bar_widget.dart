@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:freelance_ui/tab_bar_pages/profile_page.dart';
 import 'package:freelance_ui/utils.dart';
 
 class AppBarWidget extends StatelessWidget {
@@ -12,12 +13,19 @@ class AppBarWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Container(
-              height: 40.h,
-              width: 40.w,
-              margin: EdgeInsets.only(right: 5.w),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20), color: Colors.red),
+            InkWell(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const ProfilePage()));
+              },
+              child: Container(
+                height: 40.h,
+                width: 40.w,
+                margin: EdgeInsets.only(right: 5.w),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.grey),
+              ),
             ),
             Text(
               'Ritesh',

@@ -69,7 +69,8 @@ class _MainPageState extends State<MainPage> {
                       ),
                     ],
                   )
-                : PreferredSize(preferredSize: Size(0, 0), child: SizedBox()),
+                : const PreferredSize(
+                    preferredSize: Size(0, 0), child: SizedBox()),
           ),
           body: Center(
             child: _widgetOptions.elementAt(_selectedIndex),
@@ -96,7 +97,10 @@ class _MainPageState extends State<MainPage> {
             currentIndex: _selectedIndex,
             selectedItemColor: const Color.fromARGB(255, 16, 16, 16),
             unselectedItemColor: const Color.fromARGB(255, 124, 117, 117),
-            selectedFontSize: 13.sp,
+            selectedLabelStyle: TextStyle(
+              color: Colors.blueAccent,
+              fontSize: 10.sp,
+            ),
             unselectedFontSize: 8.sp,
             showUnselectedLabels: true,
             onTap: _onItemTapped,
